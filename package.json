@@ -1,0 +1,14 @@
+{
+  "name": "freecodecamp-javascript-algorithms-and-data-structures-projects",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "author": "Pablo Lucero",
+  "license": "ISC",
+  "devDependencies": {
+    "jest": "^26.1.0"
+  }
+}
