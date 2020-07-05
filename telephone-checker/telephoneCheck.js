@@ -1,5 +1,9 @@
 module.exports = function telephoneCheck(aPhoneString) {
 
+  if (typeof aPhoneString !== 'string') {
+    throw new Error('Phone number input must be a string');
+  }
+
   const validRegexCollection = [
     /^1?\d{10}$/,
     /^1?\d{3}-\d{3}-\d{4}$/,
