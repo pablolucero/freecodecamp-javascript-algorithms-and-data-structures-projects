@@ -1,6 +1,6 @@
-function cccc(result, num, baseNumber) {
+function findRomanNumber(result, num, baseNumber) {
   result += getRomanSymbol(baseNumber);
-  result += addSticks(num - baseNumber);
+  result += concatISymbolNTimes(num - baseNumber);
   return result;
 }
 
@@ -32,53 +32,79 @@ function getRomanSymbol(number) {
  * 500 ➔ D
  * 1000 ➔ M
  */
-module.exports = function convertToRoman(num) {
-  if (num === 0) {
+module.exports = function convertToRoman(input) {
+  if (input === 0) {
     throw new Error('Zero not defined');
   }
-  if (num < 0) {
+  if (input < 0) {
     throw new Error('Negative numbers not defined');
   }
 
-  if (num === 4) return 'IV';
-  if (num === 9) return 'IX';
-  if (num === 14) return 'XIV';
-  if (num === 19) return 'XIX';
+  if (input % 10 === 4) {
+    if (input === 4) return 'IV';
+    if (input === 14) return 'XIV';
+    if (input === 24) return 'XXIV';
+    if (input === 34) return 'XXXIV';
+  }
+  if (input % 10 === 9) {
+    if (input === 9) return 'IX';
+    if (input === 19) return 'XIX';
+    if (input === 29) return 'XXIX';
+    if (input === 39) return 'XXXIX';
+  }
 
   let result = '';
 
-  if (num >= 1 && num <= 3) {
-    result = cccc(result, num, 1);
+  if (input >= 1 && input <= 3) {
+    result = findRomanNumber(result, input, 1);
   }
 
-  if (num >= 5 && num <= 8) {
-    result = cccc(result, num, 5);
+  if (input >= 5 && input <= 8) {
+    result = findRomanNumber(result, input, 5);
   }
 
-  if (num >= 10 && num <= 13) {
-    result = cccc(result, num, 10);
+  if (input >= 10 && input <= 13) {
+    result = findRomanNumber(result, input, 10);
   }
 
-  if (num >= 15 && num <= 18) {
+  if (input >= 15 && input <= 18) {
     result += 'XV';
-    result += addSticks(num - 15);
+    result += concatISymbolNTimes(input - 15);
   }
 
-  if (num >= 20 && num <= 23) {
+  if (input >= 20 && input <= 23) {
     result += 'XX';
-    result += addSticks(num - 20);
+    result += concatISymbolNTimes(input - 20);
   }
 
-  if (num === 50) return 'L';
-  if (num === 100) return 'C';
-  if (num === 500) return 'D';
-  if (num === 1000) return 'M';
+  if (input >= 25 && input <= 28) {
+    result += 'XXV';
+    result += concatISymbolNTimes(input - 25);
+  }
+
+  if (input >= 30 && input <= 33) {
+    result += 'XXX';
+    result += concatISymbolNTimes(input - 30);
+  }
+
+  if (input >= 35 && input <= 38) {
+    result += 'XXXV';
+    result += concatISymbolNTimes(input - 35);
+  }
+
+  if (input === 40) return 'XL';
+
+  if (input === 50) return 'L';
+  if (input === 100) return 'C';
+  if (input === 500) return 'D';
+  if (input === 1000) return 'M';
 
 
   return result;
-};
+}
+;
 
-function addSticks(num) {
+function concatISymbolNTimes(num) {
   let result = '';
   for (let i = 0; i < num; i++) {
     result += 'I';

@@ -27,6 +27,23 @@ describe('Roman numeral converter', () => {
     expect(convertToRoman(21)).toBe('XXI');
     expect(convertToRoman(22)).toBe('XXII');
     expect(convertToRoman(23)).toBe('XXIII');
+    expect(convertToRoman(24)).toBe('XXIV');
+    expect(convertToRoman(25)).toBe('XXV');
+    expect(convertToRoman(26)).toBe('XXVI');
+    expect(convertToRoman(27)).toBe('XXVII');
+    expect(convertToRoman(28)).toBe('XXVIII');
+    expect(convertToRoman(29)).toBe('XXIX');
+    expect(convertToRoman(30)).toBe('XXX');
+    expect(convertToRoman(31)).toBe('XXXI');
+    expect(convertToRoman(32)).toBe('XXXII');
+    expect(convertToRoman(33)).toBe('XXXIII');
+    expect(convertToRoman(34)).toBe('XXXIV');
+    expect(convertToRoman(35)).toBe('XXXV');
+    expect(convertToRoman(36)).toBe('XXXVI');
+    expect(convertToRoman(37)).toBe('XXXVII');
+    expect(convertToRoman(38)).toBe('XXXVIII');
+    expect(convertToRoman(39)).toBe('XXXIX');
+    expect(convertToRoman(40)).toBe('XL');
 
     expect(convertToRoman(50)).toBe('L');
     expect(convertToRoman(100)).toBe('C');
