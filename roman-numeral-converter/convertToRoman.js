@@ -6,8 +6,10 @@
 module.exports = function convertToRoman(input) {
   validateInput(input);
 
-  const values = [1000, 900, 500, 400, 100, 90, 50, 40, 10, 9, 5, 4, 1];
-  const symbols = ['M', 'CM', 'D', 'CD', 'C', 'XC', 'L', 'XL', 'X', 'IX', 'V', 'IV', 'I'];
+// @formatter:off
+  const symbols = ['M',  'CM', 'D',  'CD', 'C', 'XC', 'L', 'XL',  'X', 'IX', 'V', 'IV', 'I'];
+  const values =  [1000, 900,  500,  400,  100,  90,   50,  40,   10,   9,    5,   4,    1];
+// @formatter:on
 
   let romanResult = '';
 
